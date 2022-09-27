@@ -1,0 +1,306 @@
+*
+{
+    margin: 0; 
+    padding: 0; 
+    box-sizing: border-box;
+}
+body
+{
+    display: flex; 
+    justify-content: center;
+    background: #111; 
+}
+h2{
+    position: relative; 
+    font-size: 6em;
+    color: #222; 
+}
+h2::before
+{
+    content: attr(data-text); 
+    position: absolute; 
+    color: #fff; 
+    width: 350px; 
+    overflow: hidden;
+    white-space: nowrap;
+    border-right: 4px solid #fff; 
+    animation: animate 8s linear infinite;
+    filter: drop-shadow(0 0 20px #fff) drop-shadow(0 0 20px #fff);
+}
+@keyframes animate
+{
+    0%, 10%, 100%
+    {
+        width: 0; 
+    }
+    70%, 90%
+    {
+        width: 100%; 
+    }
+}
+
+.modal1{
+    position: absolute; 
+    top: 50%; 
+    left: 50%; 
+    transform: translate(-50%, -50%) scale(0);
+    transition: 200ms ease-in-out;
+    border: 1px solid white; 
+    border-radius: 10px;
+    z-index: 10;
+    background-color: white;
+    width: 500px; 
+    
+}
+.modal1.active
+{
+    transform: translate(-50%, -50%) scale(1);
+}
+
+.modal-header1{
+    padding: 10px 15px; 
+    display: flex; 
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid black;
+}
+.modal-header1 .title1{
+    font-size: 1.25rem;
+    font-weight: bold;
+}
+.modal-header1 .close-button1{
+    cursor: pointer;
+    border:none; 
+    outline: none; 
+    background: none; 
+    font-size: 1.25rem;
+    font-weight: bold;
+}
+.modal-body{
+    padding: 10px 15px; 
+}
+#overlay 
+{
+    position: fixed; 
+    top: 0; 
+    left: 0; 
+    right: 0; 
+    bottom: 0; 
+    background-color: rgba(0, 0, 0, 0);
+    pointer-events: none;
+    transition: 200ms ease-in-out;
+}
+#overlay.active{
+    opacity: 1;
+    pointer-events: all;
+}
+
+.texthold{
+    position: absolute; 
+    top: 50%; 
+    left: 50%; 
+    transform: translate(-50%, -50%);
+    height: 20%;  
+    width: 20%;
+    color: gray; 
+}
+
+.modal{
+    position: absolute; 
+    top: 50%; 
+    left: 50%; 
+    transform: translate(-50%, -50%) scale(0);
+    transition: 200ms ease-in-out;
+    border: 1px solid white; 
+    border-radius: 10px;
+    z-index: 10;
+    background-color: white;
+    width: 500px; 
+    
+}
+.modal.active
+{
+    transform: translate(-50%, -50%) scale(1);
+}
+
+.modal-header{
+    padding: 10px 15px; 
+    display: flex; 
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid black;
+}
+.modal-header .title{
+    font-size: 1.25rem;
+    font-weight: bold;
+}
+.modal-header .close-button{
+    cursor: pointer;
+    border:none; 
+    outline: none; 
+    background: none; 
+    font-size: 1.25rem;
+    font-weight: bold;
+}
+.modalbody1{
+    padding: 10px 15px; 
+}
+#overlay 
+{
+    position: fixed; 
+    top: 0; 
+    left: 0; 
+    right: 0; 
+    bottom: 0; 
+    background-color: rgba(0, 0, 0, 0);
+    pointer-events: none;
+    transition: 200ms ease-in-out;
+}
+#overlay.active{
+    opacity: 1;
+    pointer-events: all;
+}
+
+.texthold1{
+    position: absolute; 
+    top: 50%; 
+    left: 50%; 
+    transform: translate(-450px, -50%);
+    height: 20%;  
+    width: 20%;
+    color: gray; 
+}
+.modal2{
+    position: fixed; 
+    top: 50%; 
+    left: 50%; 
+    transform: translate(-50%, -50%) scale(0);
+    transition: 200ms ease-in-out;
+    border: 1px solid white; 
+    border-radius: 10px;
+    z-index: 10;
+    background-color: white;
+    width: 500px; 
+    
+}
+.modal2.active
+{
+    transform: translate(-50%, -50%) scale(1);
+}
+
+.modal-header2{
+    padding: 10px 15px; 
+    display: flex; 
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid black;
+}
+.modal-header2 .title1{
+    font-size: 1.25rem;
+    font-weight: bold;
+}
+.modal-header2 .close-button1{
+    cursor: pointer;
+    border:none; 
+    outline: none; 
+    background: none; 
+    font-size: 1.25rem;
+    font-weight: bold;
+}
+.texthold2{
+    position: absolute; 
+    top: 50%; 
+    left: 50%; 
+    transform: translate(220px, -50%);
+    height: 20%;  
+    width: 20%;
+    color: gray; 
+}
+.snow, .snow2{
+    position: fixed;
+    top: 0; 
+    left: 0; 
+    width: 100%; 
+    height: 100%; 
+    background: url(images/snow5.png); 
+    background-position: 0 0;
+}
+.snow 
+{
+    background-size: 70em; 
+    animation: 
+    snowfall 30s linear infinite; 
+}
+.snow2
+{
+    background-size: 50em; 
+    animation: 
+    snowfall2 30s linear infinite; 
+    opacity: 0.5;
+    
+}
+
+@keyframes snowfall{
+    100%{
+        background-position: 70em 70em;
+    }
+}
+@keyframes snowfall2{
+    100%{
+        background-position: 40em 0em;
+    }
+}
+.pic
+{
+    width: 465px; 
+
+}
+
+.pic1
+{
+    width: 465px; 
+
+}
+@media screen and (max-width: 1180px)
+{
+    .header{
+        position: relative;
+        font-size: 6em;
+    }
+    .texthold
+    {
+        position: absolute;
+        width: 40%;
+    }
+    .modal-body{
+        font-size: small;
+    }
+    .modal{
+        width: 75%; 
+    }
+    .pic{
+        width: 100%; 
+    }
+}
+@media screen and (max-width: 700px)
+{
+    .header{
+        position: relative;
+        font-size: 3.30em;
+    }
+    .texthold
+    {
+        position: absolute;
+        width: 50%;
+    }
+    .modal-body{
+        font-size: small;
+    }
+    .modal{
+        width: 75%; 
+    }
+    .pic{
+        width: 100%; 
+    }
+}
+
